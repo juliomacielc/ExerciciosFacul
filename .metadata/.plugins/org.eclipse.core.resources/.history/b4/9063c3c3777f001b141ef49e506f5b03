@@ -1,0 +1,9 @@
+package data;
+
+public class App {
+
+	public static void main(String[] args) {
+		Data data = new Data(35,13,2000);
+		System.out.println(data.toString());
+	}
+}

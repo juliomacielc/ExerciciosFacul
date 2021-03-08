@@ -1,0 +1,89 @@
+package data;
+
+public class Data {
+	
+	private static final int meses30dias[] = {4,6,9,11};  
+	private static Data dataPadrao = new Data(1,1,1900);
+	private static Data dataMaisRecente = dataPadrao;
+	
+	private int dia;
+	private int mes;
+	private int ano;
+	
+	private void init(int dia, int mes, int ano) {
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
+		if(!this.dataValida()) {
+			
+		}
+	}
+	
+	public Data(int dia, int mes, int ano) {
+		init(dia, mes, ano);
+	}
+	
+	public Data() {
+		Data aux = Data.dataMaisRecente.somarDias(1);
+		init(aux.dia, aux.mes, aux.ano);
+		
+	}
+	
+		
+	public Data somarDias(int dias) {
+		Data aux = this;
+		aux.dia +=dias;
+		return aux;
+	}
+	
+	
+	
+	public Data compararData(Data dataComparar) {
+		if(this.compareTo(dataComparar)>0) {
+			return this;
+		}
+		else {
+			return dataComparar;
+		}
+	}
+	
+	
+	public int compareTo(Data dataComparar) {
+		int aux = this.ano - data2.ano;
+		if(aux == 0) {
+			aux = this.mes - data2.mes;
+			if(aux == 0) {
+				aux = this.dia - data2.dia;
+				return aux;
+			}
+			else {
+				return aux;
+			}
+		}
+		else {
+			return aux;
+		}
+		
+	}
+	
+	private boolean dataValida() {
+		
+	}
+	
+	
+	
+	
+	public void setDia(int dia) {
+		
+	}
+	
+	public void setMes(int mes) {
+		
+	}
+	
+	public void setAno(int ano) {
+
+	}
+	
+	
+}
